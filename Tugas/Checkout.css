@@ -1,0 +1,30 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter Tight', sans-serif;
+}
+
+footer{
+    color: #EDDFB3;
+    background-color: #B09B71;
+}
+
+.kepala{
+    top: 0;
+    font-size: 16pt;
+}
+
+.kepala a, .kepala li{
+    color: #B09B71;
+    text-decoration: none;
+}
+
+.h1{
+    color: #B09B71;
+}
+
+.row .col-8 .imeg{
+    width: 93px !important;
+    height: auto;
+}
