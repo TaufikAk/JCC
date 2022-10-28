@@ -1,0 +1,194 @@
+.merah{
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    
+}
+
+.merah:hover{
+    background-color: blue;
+    transform: translate(200px,0) rotate(130deg) ;
+    transition: transform .4s;
+    /* transform: translate(40px,120px) rotate(45deg) ; */
+    /* transform: translate(40px,120px) rotate(45deg) ; */
+}
+
+.biru{
+    background-color: blue;
+    width: 200px;
+    height: 200px;
+    animation: atasBawah 3s infinite;
+}
+
+@keyframes atasBawah{
+    0%{
+        transform: translate(0,0);
+    }
+    25%{
+        transform: translate(230px,90px) rotate(90deg);
+        transition: .4s;
+    }
+    50%{
+        background-color: aqua;
+        transition: .3s;
+    }
+    100%{
+        transform: translate(-230px,-90px) rotate(-90deg);
+        background-color: blue;
+        transition: .4s;
+    }
+}
+
+.hijau{
+    background-color: green;
+    width: 200px;
+    height: 200px;
+    animation: nyamping 3s infinite;
+}
+
+@keyframes nyamping{
+    0%{
+        transform: translate(0,0);
+    }
+    25%{
+        transform: translate(230px,0) rotate(90deg);
+        transition: .3s;
+    }
+    50%{
+        background-color: aqua;
+        border-radius: 50%;
+        transition: .3s;
+    }
+    75%{
+        transform: translate(0,0) rotate(0);
+        background-color: green;
+        transition: .3s;
+    }
+    100%{
+        transform: translate(500px,-1000px);
+        transition: .1s;
+    }
+}
+
+/*  */
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    background-color: tomato;
+    padding: 20px;
+    gap: 20px;
+}
+
+.grid div{
+    background-color: blue;
+    color: aliceblue;
+    padding: 20px;
+}
+
+@media (max-width: 900px){
+    .grid{
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .grid-item-4{
+        grid-column-start: span 3;
+    }
+}
+
+@media (max-width: 460px){
+    .grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .grid-item-4{
+        grid-column-start: unset;
+    }
+}
+
+.girid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    background-color: tomato;
+    padding: 20px;
+    gap: 20px;
+}
+
+.girid div{
+    background-color: blue;
+    color: aliceblue;
+    padding: 20px;
+}
+
+.girid-8{
+    /* grid-column-start: span 3;
+    animation: naik 3s infinite; */
+}
+
+.girid-7{
+    /* animation: sengklek 2s infinite; */
+}
+
+@media (max-width: 900px){
+    .girid{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .girid-8{
+        grid-column-start: span 2;
+    }
+}
+
+@media (max-width: 500px){
+    .girid{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .girid-8{
+        grid-column-start: unset;
+    }
+}
+
+@keyframes naik{
+    0%{
+        grid-row-start: 4;
+        background-color: aqua;
+    }
+    25%{
+        grid-row-start: 3;
+    }
+    50%{
+        grid-row-start: 2;
+    }
+    75%{
+        grid-row-start: 1;
+    }
+    100%{
+        grid-row-start: 0;
+        background-color: aqua;
+    }
+}
+
+@keyframes sengklek{
+    0%{
+        grid-row-start: 3;
+        background-color: aqua;
+    }
+    25%{
+        grid-row-start: 2;
+        grid-column-start: 2;
+    }
+    50%{
+        grid-row-start: 1;
+        grid-column-start: 3;
+    }
+    75%{
+        grid-row-start: 1;
+        grid-column-start: 2;
+    }
+    100%{
+        grid-row-start: 1;
+        grid-column-start: 1;
+        background-color: aqua;
+    }
+}

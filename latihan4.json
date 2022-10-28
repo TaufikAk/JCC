@@ -1,0 +1,15 @@
+[
+    {
+        "nama": "coeg",
+        "nah": "nyuh"
+    },
+    {
+        "nama": "coeg",
+        "umur": 3,
+        "hobi": [
+            "maen layangan",
+            "maen kelereng",
+            "dan lain lain"
+        ]
+    }
+]

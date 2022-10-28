@@ -1,0 +1,26 @@
+/* p{
+    color: aqua;
+} */
+
+/* ctrl+/ itu komen */
+
+.kotak-hitam{
+    background-color: black;
+    padding: 10px;
+}
+
+.kotak-hitam.aqua{
+    color: aqua;
+}
+
+.kotak-hitam.red{
+    color: red;
+}
+
+#p{
+    color: antiquewhite;
+}
+
+[partai="golkar"]{
+    background-color: yellow;
+}

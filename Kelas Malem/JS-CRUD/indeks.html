@@ -1,0 +1,40 @@
+var dataMobils = ["Ferrari", "Lamborgini", "Peugeot", "VW"];
+
+const add = () => {
+  var input = document.querySelector("input[name=mobil]");
+  dataMobils.push(input.value);
+  show();
+};
+
+const edit = (id) => {
+  var newMobil = prompt("Masukin Nama Mobil", dataMobils[id]);
+  dataMobils[id] = newMobil;
+  show();
+};
+
+const hapus = (id) => {
+  var hapusMobil = dataMobils.splice(id, 1);
+  dataMobils[id] = hapusMobil;
+  show();
+};
+
+const show = () => {
+  var listMobil = document.getElementById("list-mobil");
+
+  listMobil.innerHTML = "";
+
+  for (let i = 0; i < dataMobils.length; i++) {
+    var buttonEdit = "<a href='#' onclick='edit(" + i + ")'> Edit </a>";
+    var buttonDelete = `<a href='#' onclick='hapus(" + i + ")'> Delete </a>`;
+    listMobil.innerHTML +=
+      "<tr><td>" +
+      dataMobils[i] +
+      "</td><td>" +
+      buttonEdit +
+      "" +
+      buttonDelete +
+      "</td></tr>";
+  }
+};
+
+show();

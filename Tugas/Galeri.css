@@ -1,0 +1,48 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter Tight', sans-serif;
+}
+
+/* p{
+    text-align: center;
+} */
+
+/* .p{
+    text-align: justify;
+} */
+
+footer{
+    color: #EDDFB3;
+    background-color: #B09B71;
+}
+
+.kepala{
+    top: 0;
+    font-size: 16pt;
+}
+
+.kepala a, .kepala li{
+    color: #B09B71;
+    text-decoration: none;
+}
+
+.h1, .h3{
+    color: #B09B71;
+}
+
+.card{
+    width: 26rem;
+    height: 33rem;
+}
+
+.card-img-top{
+    height: 20rem;
+    width: auto;
+}
+
+.btn{
+    background-color: #BD9D1C;
+    color: #EDDFB3;
+}

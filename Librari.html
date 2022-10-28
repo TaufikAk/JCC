@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <title>Document</title>
+    <style>
+        table{
+            margin: 30px 0
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="nama" placeholder="isi nama bom">
+    <input type="number" name="" id="jumlah" placeholder="masukan jumlah bom">
+    <button id="submit" class="btn btn-primary btn-sm">Add</button>
+    <table border="1" width="100%" id="tabel-bom" class="table table-striper">
+        <thead>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Jumlah</th>
+            <th>Aksi</th>
+        </thead>
+        <tbody id="body"></tbody>
+    </table>
+    <div class="container">
+        <div id="chart"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+        // const dataBar = [{
+        //   x: 'Januari',
+        //   y: 300,
+        // },{
+        //   x: 'Februari',
+        //   y: 200,
+        // },{
+        //   x: 'Maret',
+        //   y: 3000,
+        // },{
+        //   x: 'April',
+        //   y: 1300,
+        // },{
+        //   x: 'Mei',
+        //   y: 800
+        // }]
+
+        const dataBar = localStorage.getItem('bom') ? JSON.parse(localStorage.getItem('bom')) : []
+         const warna = ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800'];
+        const optBar = {
+          chart:{
+            type: 'bar',
+            height: '300px',
+            width: '600px'
+          },
+          plotOptions: {
+            bar: {
+              horizontal: false
+            }
+          },
+          fill: {
+            colors: warna
+          },
+        legend: {
+          markers: {
+            fillcolors: warna,
+          },
+        },
+          series: [{
+            data: dataBar,
+            name: 'Penjualan bom'
+          }],
+          tooltip: {
+            // custom: ({series, seriesIndex, dataPointIndex, w}) => {
+            //     return series[seriesIndex][dataPointIndex] = "PC5"
+            // }
+            y: {
+                formatter: (value, {series, seriesIndex, dataPointIndex, w}) => {
+                    return value + " pcs"
+                }
+            }
+          },
+        // dataLabels: {
+        //     formatter: (value,opt) => {
+        //         return value + " pcs"
+        //     }
+        // }
+        yaxis: {
+            labels: {
+                formatter: (value) => {
+                    return value + "pcs"
+                }
+            },
+            min: 0,
+            // max: 4000,
+            // tickAmount: 10
+        }
+        }
+
+    //     const optBar = {
+    //     chart: {
+    //       type: "bar",
+    //       height: "500px",
+    //       width: "700px",
+    //     },
+    //     plotOptions: {
+    //       bar: {
+    //         horizontal: false,
+    //       },
+    //     },
+    //     colors: [
+    //       function ({ value, seriesIndex, w }) {
+    //         if (value < 55) {
+    //           return "#7E36AF";
+    //         } else {
+    //           return "#D9534F";
+    //         }
+    //       },
+    //       function ({ value, seriesIndex, w }) {
+    //         if (value < 111) {
+    //           return "#7E36AF";
+    //         } else {
+    //           return "#D9534F";
+    //         }
+    //       },
+    //     ],
+    //     legend: {
+    //       markers: {
+    //         fillcolors: warna,
+    //       },
+    //     },
+    //     series: [
+    //       {
+    //         data: dataBar,
+    //         name: "Penjualan Bomb",
+    //       },
+    //     ],
+    //     series: [
+    //       {
+    //         data: dataBar,
+    //         name: "Penjualan Bomb",
+    //       },
+    //     ],
+    //     tooltip: {
+    //       custom: function ({ series, seriesIndex, dataPointIndex, w }) {
+    //         return (
+    //           '<div class="arrow_box">' +
+    //           "<span>" +
+    //           series[seriesIndex][dataPointIndex] +
+    //           "</span>" +
+    //           "</div>"
+    //         );
+    //       },
+    //     },
+    //     //   y: {
+    //     //     formatter: function (
+    //     //       value,
+    //     //       { series, seriesIndex, dataPointIndex, w }
+    //     //     ) {
+    //     //       return value + "pcs";
+    //     //     },
+    //     //   },
+    //     // },
+    //     dataLabels: {
+    //       formatter: (value, opt) => {
+    //         return value + "pcs";
+    //       },
+    //     },
+    //     yaxis: {
+    //       labels: {
+    //         formatter: (value) => {
+    //           return `${value} pcs`;
+    //         },
+    //       },
+    //     },
+    //   };
+
+        const barChart = new ApexCharts(document.querySelector("#chart"), optBar);
+          barChart.render();
+
+          const namaBom = document.getElementById('nama')
+          const jumlahBom = document.getElementById('jumlah')
+          document.getElementById('submit').onclick = () => {
+            dataBar.push({
+                x: namaBom.value,
+                y: parseInt(jumlahBom.value)
+            })
+            document.getElementById('nama').value = ''
+            document.getElementById('jumlah').value = ''
+            localStorage.setItem('bom',JSON.stringify(dataBar))
+            barChart.update()
+            generateTable()
+          }
+          function generateTable(){
+            const container = document.getElementById('body')
+            container.innerHTML = ''
+            dataBar.forEach((value,index) => {
+                container.innerHTML += `
+                <tr>
+                    <td>${index + 1}</td>
+                    <td>${value.x}</td>    
+                    <td>${value.y}</td>    
+                    <td>
+                        <button onclick="edit('${index}')" class="btn btn-info btn-sm">Edit</button>   
+                        <button onclick="hapus('${index}')" class="btn btn-danger btn-sm">Hapus</button>   
+                    </td>
+                </tr>
+                `
+            })
+          }
+          generateTable()
+          function edit(index){
+            let namaBom = prompt(`Edit nama Bom ${dataBar[index].x}`,dataBar[index].x)
+            let jumlah = prompt(`Edit jumlah Bom ${dataBar[index].y}`,dataBar[index].y)
+            if(namaBom == null || jumlah == null || namaBom == '' ||jumlah ==''){
+                alert('isi datanya benar')
+                return
+            }
+            dataBar[index].x = namaBom
+            dataBar[index].y = jumlah
+            localStorage.setItem('bom',JSON.stringify(dataBar))
+            barChart.update()
+            generateTable()
+          }
+          function hapus(index){
+            let konfirmasi = confirm(`Apakah anda ingin menghapus bom ${dataBar[index].x}`)
+            if(!konfirmasi) return
+            dataBar.splice(index,1)
+            localStorage.setItem('bom',JSON.stringify(dataBar))
+            barChart.update()
+            generateTable()
+          }
+          $(document).ready( function () {
+        $('#tabel-bom').DataTable();
+        } );
+      </script>
+</body>
+</html>

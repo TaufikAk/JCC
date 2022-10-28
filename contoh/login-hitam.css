@@ -1,0 +1,101 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    background-color: #303136;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+button,b{
+    cursor: pointer;
+}
+
+.container{
+    background-color: black;
+    width: 350px;
+    height: 90vh;
+    border-radius: 20px;
+}
+
+.container .header{
+    display: flex;
+    padding: 30px;
+    /* margin-bottom: 10px; */
+}
+
+.container .header button,
+.container .icon-section button{
+    padding: 12px 16px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .3);
+    color: white;
+    border-radius: 15px;
+}
+.container .icon-section button{
+    background-color: #171717;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 18px;
+    /* border-radius: 5px; */
+}
+.container .header h1{
+    color: white;
+    margin-left: 20px;
+    font-weight: bolder !important;
+}
+
+.container .icon-section{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    padding: 10px 20px;
+}
+.container .tulisan{
+    margin-left: 20px;
+    display: block;
+    font-size: 14px;
+}
+.container .input-group{
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.container .input-group label{
+    color: white;
+}
+.container .input-group input{
+    padding: 7px 10px;
+    background-color: #171717;
+    border: 2px solid rgba(255, 255, 255, .3);
+    color: white;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    outline: none;
+}
+.container .input-group input:focus {
+    border-image-source: linear-gradient(45deg,#A52AC4,#D226AC);
+    border-image-slice: 1;
+    border-width: 2px;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude; /*5*/
+}
+
+.btn{
+    border: none;
+    background: linear-gradient(45deg,#A52AC4,#D226AC);
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    color: white;
+    font-weight: 600;
+    border-radius: 12px;
+}

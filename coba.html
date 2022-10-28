@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>FORM PENDAFTARAN</h1>
+    <br><br><br>
+    <form action="" method="post">
+        <table>
+            <tr>
+                <td>Nama</td>
+                <td colspan="2"><input type="text" name="nama" placeholder="Masukan nama"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td colspan="2"><input type="email" name="email" id="" placeholder="Masukan email"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td colspan="2"><input type="password" name="password" id="" placeholder="Masukan password"></td>
+            </tr>
+            <tr>
+                <td>Ulangi Password</td>
+                <td colspan="2"><input type="password" name="password2" placeholder="Ulangi password"></td>
+            </tr>
+            <tr>
+                <td>Tanggal Lahir</td>
+                <td colspan="2"><input type="date" name="tgllahir" placeholder="HH/BB/TTTT"></td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td colspan="2"><textarea name="alamat" id="" cols="30" rows="10"
+                        placeholder="Masukan alamat"></textarea></td>
+            </tr>
+            <tr>
+                <td>Provinsi</td>
+                <td colspan="2"><input type="text" name="provinsi" disabled>Jawa Barat</td>
+            </tr>
+            <tr>
+                <td>Kabupaten/Kota</td>
+                <td colspan="2"><select name="kab-kota" id="">
+                        <option value="kab-bandung">Kab. Bandung</option>
+                        <option value="kab-bandungbarat">Kab. Bandung Barat</option>
+                        <option value="kab-bekasi">Kab. Bekasi</option>
+                        <option value="kab-bogor">Kab. Bogor</option>
+                        <option value="kab-ciamis">Kab. Ciamis</option>
+                        <option value="kab-cianjur">Kab. Cianjur</option>
+                        <option value="kab-cirebon">Kab. Cirebon</option>
+                        <option value="kab-garut">Kab.Garut</option>
+                        <option value="kab-indramayu">Kab. Indramayu</option>
+                        <option value="kab-karawang">Kab. Karawang</option>
+                        <option value="kab-kuningan">Kab. Kuningan</option>
+                        <option value="kab-majalengka">Kab. Majalengka</option>
+                        <option value="kab-pangandaran">Kab. Pangandaran</option>
+                        <option value="kab-purwakarta">Kab. Purwakarta</option>
+                        <option value="kab-subang">Kab. Subang</option>
+                        <option value="kab-sukabumi">Kab. Sukabumi</option>
+                        <option value="kab-sumedang">Kab. Sumedang</option>
+                        <option value="kab-tasikmalaya">Kab. Tasikmalaya</option>
+                        <option value="kota-bandung">Kota Bandung</option>
+                        <option value="kota-banjar">Kota Banjar</option>
+                        <option value="kota-bekasi">Kota Bekasi</option>
+                        <option value="kota-bogor">Kota Bogor</option>
+                        <option value="kota-cimahi">Kota Cimahi</option>
+                        <option value="kota-cirebon">Kota Cirebon</option>
+                        <option value="kota-depok">Kota Depok</option>
+                        <option value="kota-sukabumi">Kota Sukabumi</option>
+                        <option value="kota-tasikmalaya">Kota Tasikmalaya</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>Kecamatan</td>
+                <td colspan="2"><select name="kecamatan" id="">
+                        <option value="cimahi-selatan">Cimahi Selatan</option>
+                        <option value="cimahi-tengah">Cimahi Tengah</option>
+                        <option value="cimahi-utara">Cimahi Utara</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>Jenis User</td>
+                <td colspan="2"><select name="jenis-user" id="">
+                        <option value="penjual">Penjual/Seniman</option>
+                        <option value="pembeli">Pembeli/Kolektor/Umum</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Sudah punya akun?<br>
+                    <u>Login</u>
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+        <input type="submit" value="DAFTAR">
+        <br><br><br>
+        <input type="submit" value="HOME">
+    </form>
+</body>
+
+</html>

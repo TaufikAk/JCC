@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud Sederhana</title>
+</head>
+<body>
+    <input type="tel" name="" id="mobil" placeholder="Masukan nama mobil">
+    <button id="submit">Add</button>
+    <button id="hapus-selected">Hapus yang dipilih</button>
+    <table border="1" width="200px" style="margin-top: 30px;">
+        <thead>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Aksi</th>
+        </thead>
+        <tbody id="body"></tbody>
+    </table>
+    <script src="crudSederhana.js"></script>
+    <script>
+        let crud = new CRUD(document.getElementById('body'))
+        document.getElementById('submit').onclick = () => {
+            let val = document.getElementById('mobil').value
+            if(val == ''){
+                alert('isian'); 
+                return}
+                
+            crud.setValue(val).add()
+            document.getElementById('mobil').value = ''
+        }
+        document.getElementById('hapus-selected').onclick = () => {
+            // console.log(document.querySelectorAll('input[type:"checkbox"]:checked'))
+            const checked = document.querySelectorAll('input[type:"checkbox"]:checked')
+            if(checked.length <= 0){
+                alert('pilih dulu itemnya');
+                return
+            }
+            checked.forEach(element => {
+                let value = element.dataset.value
+                crud.hapusYangDipilih(value.replace('/',''))
+            })
+        }
+    </script>
+</body>
+</html>

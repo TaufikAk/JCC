@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+</head>
+<body>
+    <div class="row p-3">
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail">
+        </div>
+         <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Password</label>
+         <input type="password" class="form-control" id="inputPassword">
+        </div>
+        <button id="login" onclick="loin()">Login</button>
+        <p>Belum punya akun? <a href="Register.html">Daftar</a> </p>
+    </div>
+    <script>
+        function loin(){
+            let data = localStorage.getItem('user') == undefined ? [] :JSON.parse(localStorage.getItem('user'))
+            let mail = document.getElementById('inputEmail')
+            let pass = document.getElementById('inputPassword')
+            const isRegistered = data.findIndex((value,index) => {
+                return value.email == mail.value && value.password == pass.value
+            })
+            if(isRegistered == -1){
+                alert('Gagal Login')
+                return
+            } 
+            if(data[isRegistered].role == 1){
+                window.location.href = "Admin.html"
+            } else{
+                window.location.href = "User.html"
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+</html>

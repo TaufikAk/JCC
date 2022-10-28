@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Register</title>
+</head>
+<body>
+    <p>Nama</p>
+    <input type="text" name="nama" id="nama">
+    <p>Email</p>
+    <input type="email" name="email" id="email">
+    <p>password</p>
+    <input type="password" name="password" id="password">
+    <p>Role</p>
+    <select class="form-select mb-3" id="selek" aria-label="Default select example">
+        <option selected>Role</option>
+        <option value="1">Admin</option>
+        <option value="2">User</option>
+      </select>
+    <button id="register" onclick="regis()">Register</button>
+    <p>Sudah punya akun? <a href="Login.html">Login</a></p>
+
+    <script>
+
+        function regis(){
+            // var data = JSON.parse(localStorage.getItem('user'))
+            var data = localStorage.getItem('user') == undefined ? [] :JSON.parse(localStorage.getItem('user'))
+            let nam = document.getElementById('nama')
+            let pas = document.getElementById('password')
+            let mail = document.getElementById('email')
+            let rol = document.getElementById('selek')
+            const isRegistered = data.findIndex((value,index) => {
+                return value.email == mail.value
+            })
+            if(isRegistered == -1){
+                data.push({
+                nama: nam.value,
+                password: pas.value,
+                email: mail.value,
+                role: rol.value
+                })
+                alert("Registrasi Berhasil")
+            } else{
+                alert('User Sudah Ada')
+                return
+            }
+            
+            const json = JSON.stringify(data)
+            localStorage.setItem('user',json)
+        }
+        // $('register').click(() => {
+        //     regis()
+        // })
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+</html>

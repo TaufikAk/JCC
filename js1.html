@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('Hello Asep')
+
+        //var tidak direkomendasikan
+        var pertama = 1
+        let kedua = 2
+        if(pertama == 1){
+            var pertama = 2
+            let kedua = 3
+        }
+        console.log(pertama,kedua)
+
+        var sat = 1
+        let du = 2
+        const empat = 4
+        if(sat == 1){
+            var sat = 2
+            let du = 3
+            var tiga = 3
+            const empat = 5
+            console.log(du,empat)
+        }
+        console.log(sat,du,tiga,empat)
+
+        // contoh konstan
+        const satu = 1
+        let dua = 2
+        // satu = 2 
+        dua = 3
+        console.log(satu)
+        console.log(dua)
+
+        let angka = 3
+        switch(angka){
+            case angka < 2 : console.log('angka ini kurang dari dua'); break;
+            case angka < 4 : console.log('angka ini kurang dari empat'); break;
+            default: console.log('angka lebih dari empat')
+        }
+
+        let nilai = -200
+        if(nilai == 100){
+            console.log("Nilai anda S")
+        } else if(nilai < 100 && nilai >= 80){
+            console.log("Nilai anda A")
+        } else if(nilai < 80 && nilai >= 60){
+            console.log("Nilai anda B")
+        } else if(nilai < 60 && nilai >= 30){
+            console.log("Nilai anda C")
+        } else if(nilai < 30 && nilai > 0){
+            console.log("Nilai anda D")
+        } else if (nilai < 0 || nilai > 100){
+            console.log("Masukan nilai yang valid")
+        }
+
+        for(let i=1; i<5; i++){
+            console.log(`${i} pangkat ${i+1} sama dengan ${i**(i+1)}`);
+        }
+
+        </script>
+        <p id="p">Front end</p>
+        <!-- <button id="btn" onclick="alert('anjay bisa')">Pencet</button> -->
+        <input type="text" id="input">
+        <button id="btn">Pencet</button>
+        <script>
+            const parapraph = document.getElementById('p')
+            const btn = document.getElementById('btn')
+            const input = document.getElementById('input')
+
+            btn.onclick = function(){
+                alert(input.value)
+            }
+            btn.onclick = function(){
+                alert(parapraph.innerText)
+            }
+
+            btn.onclick = function(){
+                // parapraph.innerHTML = '<h1>Kucing Ganteng</h1>'
+                parapraph.innerHTML = `<h1>${input.value}</h1>`
+                parapraph.style.color = 'red'
+            }
+
+            // btn.addEventListener('click',function(){
+            //     alert('anjay bisa')
+            // })
+
+            // btn.onclick = function(){
+            //     alert('anjay bisa')
+            // }
+        </script>
+</body>
+</html>

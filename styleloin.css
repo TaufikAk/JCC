@@ -1,0 +1,70 @@
+.btn{
+    border:none;
+    background: linear-gradient(45deg, #BA16D9, #D226AC);
+    padding: 10px 10px;
+    font-size: 14px;
+    color: white;
+    font-weight: 600;
+    margin: 10px;
+    margin-left: 15px;
+    border-radius: 15px;
+    width: 90%;
+}
+
+h1{
+    padding: 10px;
+}
+
+p{
+    padding: 10px;
+    padding-bottom: 0;
+}
+
+input{
+    text-align: center;
+    width: 85%;
+    border-radius: 10px;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    padding: 20px;
+    gap: 20px;
+}
+
+.ikon{
+    display: grid;
+    grid-template-columns: 50% auto;
+    grid-area: ikon;
+    padding: 10px;
+}
+
+.gogel{
+    background-color:rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.gogel > svg{
+    width: auto;
+    height: 100%;
+}
+
+.apel{
+    background-color:black;
+    opacity: .4;
+    border-radius: 25px;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.formulir{
+    background-color: black;
+    color: white;
+    grid-column-start: 3;
+    border-radius: 25px;
+}
